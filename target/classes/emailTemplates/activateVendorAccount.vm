@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Email template</title>
+          <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            .logo{position: absolute; margin-left: 51px; margin-top: 74px;}
+            .panel{margin:0 auto;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="panel panel-default" style="width: 545px;">
+                <div class="panel-body" style="text-align: center;">
+                    <h2 style="text-transform: uppercase; font-weight: 600;"style="color:DodgerBlue;">Hello Ambulance</h2>
+                    
+                    <h1 style="background-color:white;">welcome to Hello Ambulance</h1>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR41i_6PCzbyR0y6k6Okpd9AWSuSGDlBttAA298t0D3JP8jSvizQw" class="logo" width="150" height="150" >
+                    <div class="note">
+					
+						
+						
+						
+			<form id="login-form" action="http://localhost:8080/helloambulance/activateVendor-account"  role="form"
+								style="display: block;" method="POST">
+								
+								
+						
+							<input type="hidden" name="email" value="${vendor.email_id}"/>
+							<input type="hidden" name="oneTimePassword" value="${vendor.otp}"/>
+							<input class="btn btn-info" type="submit" value="CONFIRM YOUR ACCOUNT"/>
+						</form>
+                       </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+<html>
+
+ 
+<body>
+Dear ${register.firstName} ${register.lastName},<br>
+ 
+	Sending Email Using Spring Smtp Email + Velocity Template from <span style="color:red">location.</span>
+	<button><a href="http://www.google.com">Click</a></button>
+	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP5gbBJlpb9xTj7CYBT-p4e-oqjniHdvwe8tnMG0Srr-SfbxZ5"/>
+Thanks,<br>
+Lotto Express Team.
+</body>
+ 
+</html>

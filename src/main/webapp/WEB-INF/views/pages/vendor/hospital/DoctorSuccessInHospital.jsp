@@ -1,0 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<div class="container" style="margin-top: 100px; min-height: 150px">
+
+<h4 style="color: green;">DOCTOR REGISTRATION COMPLETED SUCCESSFULLY...  </h4>
+
+<h5 style="color: blue;">Please check your mail to set password </h5>
+
+</div>

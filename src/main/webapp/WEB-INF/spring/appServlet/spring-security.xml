@@ -1,0 +1,175 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+
+	<context:property-placeholder location="classpath:HelloAmbulanceData.properties" />
+		
+<!--main-page  -->
+<!--  <http pattern="/" auto-config="true" use-expressions="true">
+		<intercept-url pattern="/" />
+		<intercept-url pattern="/" />
+		<intercept-url pattern=""/>
+		<intercept-url pattern=""/>
+		<intercept-url pattern=""/>
+	</http> 
+ -->
+
+
+
+
+								<!-- User Page -->
+
+<http pattern="/user/**" auto-config="true" use-expressions="true" >
+
+<!--  <port-mappings>
+<port-mapping http="80" https="8443"/>
+</port-mappings> 
+ <headers>
+<xss-protection enabled="true" block="false"/>
+</headers>  -->
+<intercept-url pattern="/user/**" access="hasRole('ROLE_USER')" />
+<access-denied-handler error-page="/403" />
+<form-login login-page="/user/login" login-processing-url="/user/login" default-target-url="/user/" authentication-failure-url="/userlogin/error"    />
+<session-management invalid-session-url="/"	session-fixation-protection="newSession">
+<concurrency-control max-sessions="12" error-if-maximum-exceeded="true" expired-url="/login?sessionexpired" />
+</session-management>
+<logout logout-url="/user/logout" invalidate-session="true"	logout-success-url="/userlogout/"  delete-cookies="JSESSIONID" />
+
+</http>
+
+
+							<!-- vendor page -->
+							
+<http pattern="/vendor/**" auto-config="true" use-expressions="true" >
+
+<!-- 
+ <port-mappings>
+<port-mapping http="80" https="8443"/>
+</port-mappings> 
+ <headers>
+<xss-protection enabled="true" block="false"/>
+</headers>  -->
+<intercept-url pattern="/vendor/**" access="hasRole('ROLE_VENDOR') or hasRole('ROLE_VENDOR,ROLE_DOCTOR') or hasRole('ROLE_VENDOR,ROLE_AMBULANCE') or hasRole('ROLE_VENDOR,ROLE_HOSPITAL')" />
+<!-- <intercept-url pattern="/vendor/**" access="hasRole('ROLE_VENDOR') and hasRole('ROLE_AMBULANCE')"/> -->
+<access-denied-handler error-page="/403" />
+<form-login login-page="/vendor/login" login-processing-url="/vendor/login" default-target-url="/vendor/" authentication-failure-url="/vendorlogin/error"  />
+<session-management invalid-session-url="/"	session-fixation-protection="newSession">
+<concurrency-control max-sessions="12" error-if-maximum-exceeded="true" expired-url="/vendor?sessionexpired" />
+</session-management>
+<logout logout-url="/vendor/logout" invalidate-session="true"	logout-success-url="/vendorlogout/"  delete-cookies="JSESSIONID" />
+
+
+</http>
+
+							<!-- admin Page -->
+							
+<http pattern="/admin/**" auto-config="true" use-expressions="true" >
+
+
+<!--  <port-mappings>
+<port-mapping http="80" https="8443"/>
+</port-mappings> 
+ <headers>
+<xss-protection enabled="true" block="false"/>
+</headers>  -->
+<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+<access-denied-handler error-page="/403" />
+<form-login login-page="/admin/login" login-processing-url="/admin/login" default-target-url="/admin/" authentication-failure-url="/adminlogin/error"  />
+<session-management invalid-session-url="/"	session-fixation-protection="newSession">
+<concurrency-control max-sessions="12" error-if-maximum-exceeded="true" expired-url="/admin?sessionexpired" />
+</session-management>
+<logout logout-url="/admin/logout" invalidate-session="true"	logout-success-url="/adminlogin/"  delete-cookies="JSESSIONID" />
+
+</http>
+
+
+<!--  <authentication-manager  alias="authenticationManager">
+<authentication-provider>
+ <password-encoder ref="passwordEncoder" />
+ <user-service>
+                <user name="varma" password="778866" authorities="ROLE_USER" />
+           		<user name="admin" password="778866" authorities="ROLE_ADMIN"/>
+           		<user name="vendor" password="778866" authorities="ROLE_VENDOR"/>
+           
+
+ </user-service>
+</authentication-provider>
+</authentication-manager>  -->
+
+
+  <authentication-manager alias="authenticationManager" >
+<authentication-provider>
+             <password-encoder ref="encoder" />   
+ <jdbc-user-service data-source-ref="DataSource" 
+users-by-username-query="select email_id, password,user_status from user_registration where email_id=?"
+authorities-by-username-query="select email_id,role from user_registration where email_id=? and role='ROLE_USER' or role='ROLE_ADMIN'" />
+</authentication-provider> 
+<authentication-provider >
+             <password-encoder ref="encoder"  />   
+ <jdbc-user-service  data-source-ref="DataSource"
+users-by-username-query="select email_id, password,vendor_status from vendor_registration where email_id=?"
+authorities-by-username-query="select email_id,role from vendor_registration where email_id=?" />
+</authentication-provider> 
+
+<authentication-provider >
+             <password-encoder ref="encoder"  />   
+ <jdbc-user-service  data-source-ref="DataSource"
+users-by-username-query="select email_id, password,status from register_as_doctor where email_id=?"
+authorities-by-username-query="select email_id,role from register_as_doctor where email_id=?" />
+</authentication-provider>
+
+<authentication-provider >
+             <password-encoder ref="encoder"  />   
+ <jdbc-user-service  data-source-ref="DataSource"
+users-by-username-query="select email_id, password,status from register_as_ambulance where email_id=?"
+authorities-by-username-query="select email_id,role from register_as_ambulance where email_id=?" />
+</authentication-provider> 
+</authentication-manager>
+  
+               <beans:bean id="encoder" 
+	class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+	 <beans:constructor-arg name="strength" value="11" />
+  </beans:bean>         
+<!--   <beans:bean id="encoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder" />
+ -->  
+ 
+ 
+<!-- <beans:bean id="passwordEncoder"
+        class="org.springframework.security.crypto.password.NoOpPasswordEncoder" />
+         -->
+        
+         
+   <!--  <beans:bean id="dataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <beans:property name="url"
+            value="jdbc:mysql://192.168.1.254:3306/hello_ambulance" />
+        <beans:property name="username" value="realcom" />
+        <beans:property name="password" value="realcom" />
+    </beans:bean>  -->
+  
+  
+  <beans:bean id="DataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<beans:property name="driverClassName" value="${db.driver}" />
+		<beans:property name="url" value="${db.url}" />
+		<beans:property name="username" value="${db.user}" />
+		<beans:property name="password" value="${db.password}" />
+		<beans:property name="poolPreparedStatements" value="true" />
+		<beans:property name="maxIdle" value="10" />
+		<beans:property name="validationQuery" value="SELECT 1" />
+		<beans:property name="testOnBorrow" value="true" />
+	</beans:bean> 
+
+<!-- usersByUsernameQuery(
+   "select username,password, enabled from users where username=?")
+  .authoritiesByUsernameQuery(
+   "select username, role from user_roles where username=?");
+ } 
+ -->
+</beans:beans>

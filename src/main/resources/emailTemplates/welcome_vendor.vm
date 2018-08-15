@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome Teemplate</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Felipa|Varela+Round" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+        <style>
+.fancy-font {
+  /* margin: 20px; */
+font-family: 'Paytone One', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+    text-align: center;
+}
+.fancy-font span {
+  display: block;
+  margin: 11px 0 17px 0;
+  font-size: 80px;
+  line-height: 80px;
+  color: #000000;
+  text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+  letter-spacing: -4px;
+}
+.login-button{
+    position: absolute;
+    margin-top:10em;
+    margin-left: 11em;
+}
+.data{margin-left: 20em;}
+.container{ background-color:#B0C4DE}
+            .logo{ position: absolute;height: 100px;width:100px;margin-left: 13.5em;margin-top: 5em;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="heading">
+            <h3 class="fancy-font"> <span>Hello Ambulance</span></h3>
+            </div>
+            <div class="data">
+            <h2>Hello ${vendor.name},</h2>
+                <h4 style="margin-left:4em;">WELCOME TO Hello Ambulance</h4>
+            <h5 style="margin-left:8.5em;">In order to login, Please click on the below button.</h5>
+        
+				<a href="http://localhost:8080/helloambulance/vendorlogin"><button class="btn btn-info btn-lg login-button">LOG IN</button></a>
+				</div>
+                 <div class="image-responsive">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR41i_6PCzbyR0y6k6Okpd9AWSuSGDlBttAA298t0D3JP8jSvizQw" class="letter" width="250" height="200"/><hr /></div>
+            </div>
+				
+      <!--
+            <div class="image-responsive">
+                  <img src="http://www.nflview.com/nfl_wallpaper/tampa_bay_buccaneers_old_logo_nfl.jpg" class="letter" width="250" height="200"/><hr /></div>
+            </div> -->
+            <h3><b>Regards,</b></h3>
+                <h4 style="margin-left: 6em;">Realcom Infocom Pvt.Ltd.</h4> <h6 style="margin-right: 6em;">@Narednra<h6>
+        </div>
+            </div>
+    </body>
+</html>

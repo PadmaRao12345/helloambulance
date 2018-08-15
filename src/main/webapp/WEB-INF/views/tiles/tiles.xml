@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- ############################### Main Page Layout ######################################## -->
+	<definition name="main-page-layout"
+		template="/WEB-INF/views/tiles/layouts/main/mainPageLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/main/mainHeader.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/main/mainMenu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/main/mainFooter.jsp" />
+	</definition>
+
+
+	<!--####################### forgot password ############################ -->
+
+
+
+	<definition name="password-layout"
+		template="/WEB-INF/views/tiles/layouts/password/passwordLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/password/passwordHeader.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/password/passwordMenu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/password/passwordFooter.jsp" />
+	</definition>
+
+	<definition name="checkMail" extends="password-layout">
+		<put-attribute name="title" value="helloambulance" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/checkMail.jsp" />
+
+	</definition>
+
+	<definition name="forgotPassword" extends="password-layout">
+		<put-attribute name="title" value="helloambulance" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/forgotPassword.jsp" />
+
+	</definition>
+
+	<definition name="newPassword" extends="password-layout">
+		<put-attribute name="title" value="helloambulance" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/newPassword.jsp" />
+	</definition>
+
+	<definition name="success" extends="password-layout">
+		<put-attribute name="title" value="helloambulance" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/success.jsp" />
+	</definition>
+
+
+	<!-- ########################## Forgot Password for vendor ################################### -->
+	<definition name="forgotPasswordforvendor" extends="password-layout">
+		<put-attribute name="title" value="forgot password" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/forgotPasswordforvendor.jsp" />
+
+	</definition>
+
+	<definition name="newPasswordforvendor" extends="password-layout">
+		<put-attribute name="title" value="helloambulance" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/newpasswordforvendor.jsp" />
+	</definition>
+
+	<definition name="resetvendorpasswordSuccess" extends="password-layout">
+		<put-attribute name="title" value="helloambulance" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/resetpasswordsuccessforvendor.jsp" />
+	</definition>
+
+	<!--########## ContactUs (Radha rukmini)########### -->
+
+	<!-- contact us -->
+	<definition name="contact-us" extends="main-page-layout">
+		<put-attribute name="title" value="contact-us" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/main/contactUs.jsp"></put-attribute>
+	</definition>
+
+
+
+	<!-- main page -->
+	<definition name="main-page" extends="main-page-layout">
+		<put-attribute name="title" value="HelloAmbulance" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/main/mainPage.jsp" />
+	</definition>
+
+	<!-- main page success -->
+	<definition name="usersuccess" extends="main-page-layout">
+		<put-attribute name="title" value="main-page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/main/UserSuccess.jsp" />
+	</definition>
+
+	<!-- main page success -->
+	<definition name="activationsuccess" extends="main-page-layout">
+		<put-attribute name="title" value="main-page" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/main/ActivationSuccess.jsp" />
+	</definition>
+
+	<!-- main page success -->
+	<definition name="userlogout" extends="main-page-layout">
+		<put-attribute name="title" value="logout success" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/user/userLogoutSuccess.jsp" />
+	</definition>
+
+	<!-- about us -->
+	<definition name="about-us" extends="main-page-layout">
+		<put-attribute name="title" value="About Us" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/main/aboutUs.jsp"></put-attribute>
+	</definition>
+
+	<!-- vendor_login_page -->
+	<definition name="vendorlogin" extends="main-page-layout">
+		<put-attribute name="title" value="vendor_login" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/vendor/vendorloginHeader.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/vendorloginmenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/vendorlogin.jsp"></put-attribute>
+	</definition>
+
+
+	<!-- admin_login_page -->
+	<definition name="adminlogin" extends="main-page-layout">
+		<put-attribute name="title" value="adminlogin" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/admin/adminlogheader.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/admin/adminloginMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/main/adminlogin.jsp"></put-attribute>
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/admin/adminlogheader.jsp" />
+	</definition>
+
+
+
+
+	<!-- ############################### User Home Page Layout ######################################## -->
+	<definition name="userHomePage"
+		template="/WEB-INF/views/tiles/layouts/user/userHomePageLayout.jsp">
+		<put-attribute name="title" value="userHomePage" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/user/userHeader.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/user/userMenu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/user/userFooter.jsp" />
+	</definition>
+	<!-- ###########################Blogs in user(Vijay)##################################### -->
+	<definition name="Blogs" extends="userHomePage">
+		<put-attribute name="title" value="Blogs" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/main/Blogs.jsp" />
+	</definition>
+
+	<!-- ###########################end Blogs in user(Vijay)##################################### -->
+	<definition name="user-page" extends="userHomePage">
+		<put-attribute name="title" value="userHomePage" />
+		<put-attribute name="body" value="/WEB-INF/views/pages/user/view.jsp" />
+	</definition>
+	<definition name="UserUpdatePage" extends="userHomePage">
+		<put-attribute name="title" value="Update Details" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/user/updateuserprofile.jsp" />
+	</definition>
+	<definition name="UserUpdateSuccess" extends="userHomePage">
+		<put-attribute name="title" value="Update success" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/user/updateusersuccess.jsp" />
+	</definition>
+
+	<!-- user page -->
+	<definition name="user-page" extends="userHomePage">
+		<put-attribute name="title" value="userHomePage" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/user/userpage.jsp" />
+	</definition>
+
+	<!-- #################################### Search Hospitals ########################### -->
+	<definition name="Hospitals" extends="userHomePage">
+		<put-attribute name="title" value="hospitals" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/Hospitals/SearchHospital.jsp" />
+	</definition>
+	<definition name="hospitalsearch" extends="userHomePage">
+		<put-attribute name="title" value="hospitals" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/Hospitals/HospitalList.jsp" />
+	</definition>
+
+
+	<!-- #################################### Search Doctors ########################### -->
+	<definition name="Doctors" extends="userHomePage">
+		<put-attribute name="title" value="hospitals" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/Doctors/SearchDoctors.jsp" />
+	</definition>
+
+	<definition name="doctorsearch" extends="userHomePage">
+		<put-attribute name="title" value="hospitals" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/Doctors/DoctorsList.jsp" />
+	</definition>
+
+
+
+	<!-- ############################### Vendor Login Page Layout ######################################## -->
+	<definition name="vendorLoginPage"
+		template="/WEB-INF/views/tiles/layouts/vendor/vendorLoginPageLayout.jsp">
+		<put-attribute name="title" value="vendorLogin" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/main/mainHeader.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/vendorMenu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/vendor/vendorFooter.jsp" />
+	</definition>
+
+
+
+	<!-- ############################### Vendor Home Page Layout ######################################## -->
+	<definition name="vendorhome"
+		template="/WEB-INF/views/tiles/layouts/vendor/vendorHomePageLayout.jsp">
+		<put-attribute name="title" value="vendorhomepage" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/vendor/vendorHeader.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/vendorMenu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/vendor/vendorFooter.jsp" />
+	</definition>
+
+
+	<!-- List Ambulances (vijay) -->
+
+	<definition name="listofAmbulances" extends="vendorhome">
+		<put-attribute name="title" value="listof-Ambulances" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/listOfAmbulance.jsp" />
+	</definition>
+	<!-- vendor updated profile -->
+
+	<!-- <definition name="VendorUpdatePage" extends="vendorhomepage"> <put-attribute 
+		name="title" value="Update Details"/> <put-attribute name="body" value="/WEB-INF/views/pages/user/updatevendorprofile.jsp"/> 
+		</definition> -->
+	<!-- <definition name="UserUpdateSuccess" extends="vendorhomepage"> <put-attribute 
+		name="title" value="Update success"/> <put-attribute name="body" value="/WEB-INF/views/pages/user/updateusersuccess.jsp"/> 
+		</definition> -->
+	<!-- vendor home page -->
+	<!-- <definition name="vendorhomepage" extends="vendorhome"> <put-attribute 
+		name="title" value="HelloAmbulance"/> <put-attribute name="body" value="/WEB-INF/views/pages/vendor/vendorpage.jsp"/> 
+		</definition> -->
+	<definition name="getProfileDetails" extends="vendorhome">
+		<put-attribute name="title" value="profile" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" />
+
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/registerAsAmbulance.jsp" />
+	</definition>
+
+	<!-- vendor home page -->
+	<!-- <definition name="vendorhomepage" extends="vendorhome"> <put-attribute 
+		name="title" value="HelloAmbulance"/> <put-attribute name="body" value="/WEB-INF/views/pages/vendor/vendorpage.jsp"/> 
+		</definition> -->
+
+	<!-- <definition name="ambreg" extends="vendorhome"> <put-attribute name="title" 
+		value="amb_reg" /> <put-attribute name="menu" value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" 
+		/> <put-attribute name="body" value="/WEB-INF/views/pages/vendor/ambulanceRegistration.jsp" 
+		/> </definition> -->
+	<!-- <definition name="docreg" extends="vendorhome"> <put-attribute name="title" 
+		value="doc_reg" /> <put-attribute name="body" value="/WEB-INF/views/pages/vendor/DoctorRegistration.jsp" 
+		/> </definition> -->
+	<definition name="hosreg" extends="vendorhome">
+		<put-attribute name="title" value="amb_reg" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/ambulanceRegistration.jsp" />
+	</definition>
+
+
+
+
+	<!-- <definition name="AmbulanceProfile" extends="vendorhome"> <put-attribute 
+		name="title" value="profile" /> <put-attribute name="menu" value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" 
+		/> <put-attribute name="body" value="/WEB-INF/views/pages/vendor/registerAsAmbulance.jsp" 
+		/> </definition> -->
+
+
+	<definition name="ambreg" extends="vendorhome">
+		<put-attribute name="title" value="ambulance_registration" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/ambulance/addAmbulancesInAmbulancepage.jsp" />
+
+	</definition>
+
+
+	<definition name="ambulanceSuccessInAmbulance" extends="vendorhome">
+		<put-attribute name="title" value="ambulance_registration" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/ambulance/ambulanceSuccessInAmbulance.jsp" />
+
+	</definition>
+
+	<!-- <definition name="docreg" extends="vendorhome"> <put-attribute name="title" 
+		value="doctor_registration" /> <put-attribute name="menu" value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" 
+		/> <put-attribute name="body" value="/WEB-INF/views/pages/vendor/DoctorRegistration.jsp" 
+		/> </definition> -->
+
+
+
+
+
+	<!--################################### Ambulance Home page ######################################### -->
+
+
+	<!-- ambulance home page -->
+	<definition name="vendorasambulance" extends="vendorhome">
+		<put-attribute name="title" value="Ambulance Registration" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/registerAsAmbulance.jsp" />
+	</definition>
+	<!-- Ambulance Registration page -->
+	<definition name="ambulance_registration" extends="vendorhome">
+		<put-attribute name="title" value="ambulance_registration" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/ambulanceRegistration.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" />
+	</definition>
+
+	<!-- ambulance success page -->
+	<definition name="ambulancesuccess" extends="vendorhome">
+		<put-attribute name="title" value="ambulance_registration" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/AmbulanceSuccess.jsp" />
+
+	</definition>
+
+	<!--####################################### Doctor Home Page ############################################### -->
+
+	<!-- Doctor home page -->
+	<definition name="vendorasdoctor" extends="vendorhome">
+		<put-attribute name="title" value="HelloAmbulance" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/registerAsDoctor.jsp" />
+	</definition>
+
+	<!-- doctor Registration page -->
+	<definition name="doctor_registration" extends="vendorhome">
+		<put-attribute name="title" value="doctor_registration" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/DoctorRegistration.jsp" />
+
+	</definition>
+
+	<!-- doctor success page -->
+	<definition name="doctorsuccess" extends="vendorhome">
+		<put-attribute name="title" value="doctor_registration" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/DoctorSuccess.jsp" />
+
+	</definition>
+	<!-- doctor Registration page -->
+	<definition name="add_details" extends="vendorhome">
+		<put-attribute name="title" value="add_details" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/Doctors/addDoctorDetails.jsp" />
+
+	</definition>
+
+
+	<!--##################################### Hospital Home page ############################################## -->
+	<!-- Hospital home page -->
+	<definition name="vendorashospital" extends="vendorhome">
+		<put-attribute name="title" value="Hospital Registration" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/registerAsHospital.jsp" />
+	</definition>
+
+
+	<!-- Hospital Registration page -->
+	<definition name="hospital_registration" extends="vendorhome">
+		<put-attribute name="title" value="hospital registration" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospitalRegistration.jsp" />
+
+	</definition>
+
+	<!-- Hospital success page -->
+	<definition name="hospitalSuccess" extends="vendorhome">
+		<put-attribute name="title" value="hospital_registration" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospitalSuccess.jsp" />
+
+	</definition>
+
+
+
+
+
+
+	<!-- ############################### Vendor registration Page Layout (Narendra)######################################## -->
+
+
+	<definition name="VendorRegistrationPage"
+		template="/WEB-INF/views/tiles/layouts/vendor/vendorregistration.jsp">
+		<put-attribute name="title" value="AdminLoginPage" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/vendor/vendorRegistrationHeader.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/vendorRegistrationMenu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/vendor/vendorRegistrationFooter.jsp
+		" />
+	</definition>
+
+
+	<!--#################################### Vendor Registration(Narendra) ####################################### -->
+
+	<!-- vendor Registration page (Narendra) -->
+	<definition name="vendorregister" extends="VendorRegistrationPage">
+		<put-attribute name="title" value="vendor_registration" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/vendorpage.jsp" />
+
+	</definition>
+
+	<!-- vendor activation success page -->
+	<definition name="vendoractivationsuccess" extends="VendorRegistrationPage">
+		<put-attribute name="title" value="activation-success" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/vendoractivationsuccess.jsp" />
+	</definition>
+
+	<!-- vendor Registration_success page (Narendra) -->
+	<definition name="vendorAccontActivate" extends="VendorRegistrationPage">
+		<put-attribute name="title" value="vendor_registration" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/vendorSuccess.jsp" />
+
+	</definition>
+
+	<!-- vendor Logout_success page (Narendra) -->
+	<definition name="vendorlogout" extends="VendorRegistrationPage">
+		<put-attribute name="title" value="logout success" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/vendorLogoutSuccess.jsp" />
+
+	</definition>
+
+
+
+	<!--################################# Vendor View Profile ################################################### -->
+
+	<!-- Ambulance Profile (vijay) -->
+	<!-- <definition name="AmbulanceProfile" extends="vendorhome"> <put-attribute 
+		name="title" value="profile"/> <put-attribute name="menu" value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp"/> 
+		<put-attribute name="body" value="/WEB-INF/views/pages/vendor/ambulanceprofile.jsp"/> 
+		</definition > -->
+
+
+	<!--Hospital Profile (vijay) -->
+	<definition name="HospitalProfile" extends="vendorhome">
+		<put-attribute name="title" value="profile" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospitalprofile.jsp" />
+	</definition>
+
+	<!--Doctor Profile (vijay) -->
+	<definition name="DoctorProfile" extends="vendorhome">
+		<put-attribute name="title" value="DoctorProfile" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/vendorMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/doctorprofile.jsp" />
+	</definition>
+
+
+	<!-- ################################## Hospital Update (Narendra) ################################# -->
+
+	<definition name="hospitalupdatePage" extends="vendorhome">
+		<put-attribute name="title" value="update Details" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospitalUpdate.jsp" />
+	</definition>
+
+
+	<definition name="updateHospitalDetails" extends="vendorhome">
+		<put-attribute name="title" value="update Details" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospitalUpdateSuccess.jsp" />
+	</definition>
+
+	<definition name="addHospitalEquipments" extends="vendorhome">
+		<put-attribute name="title" value="update Details" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/addHospitalEquipments.jsp" />
+	</definition>
+
+	<!-- ############################## Doctor Update (Narednra) #################################### -->
+	<definition name="doctorUpdatePage" extends="vendorhome">
+		<put-attribute name="title" value="Update Details" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/doctorupdate.jsp" />
+	</definition>
+
+	<definition name="doctorUpdateSuccess" extends="vendorhome">
+		<put-attribute name="title" value="update Success" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/doctorUpdateSuccess.jsp" />
+	</definition>
+
+	<definition name="addNewDoctorSpecialization" extends="vendorhome">
+		<put-attribute name="title" value="update Success" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/addDoctorSpecialization.jsp" />
+	</definition>
+	<!-- ############################## Ambulance Update(Narendra) ################################### -->
+	<definition name="ambulanceUpdatePage" extends="vendorhome">
+		<put-attribute name="title" value="Update Details" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/ambulanceupdate.jsp" />
+	</definition>
+
+	<definition name="ambulanceUpdateSuccess" extends="vendorhome">
+		<put-attribute name="title" value="Update success" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/ambulanceUpdateSuccess.jsp" />
+	</definition>
+
+	<definition name="addNewAmbulanceEquipments" extends="vendorhome">
+		<put-attribute name="title" value="update Details" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/addAmbulanceEquipments.jsp" />
+	</definition>
+
+
+	<!-- #################################### Change Password (Narendra) ##################################### -->
+
+	<!-- Change Ambulance Password (Narendra) -->
+	<definition name="changeambulancepassword" extends="vendorhome">
+		<put-attribute name="title" value="change password" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/changevendorpassword.jsp" />
+	</definition>
+	<!-- Change Doctor password (Narendra) -->
+	<definition name="changedoctorpassword" extends="vendorhome">
+		<put-attribute name="title" value="change password" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/changevendorpassword.jsp" />
+	</definition>
+	<!-- Change Hospital Password (Narendra) -->
+	<definition name="changehospitalpassword" extends="vendorhome">
+		<put-attribute name="title" value="change password" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/changevendorpassword.jsp" />
+	</definition>
+
+	<definition name="vendorpasswordchangesuccess" extends="password-layout">
+		<put-attribute name="title" value="pssword change" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/vendorpasswordchangesuccess.jsp" />
+	</definition>
+
+
+	<!-- Change User Password (Narendra) -->
+	<definition name="changePassword" extends="userHomePage">
+		<put-attribute name="title" value="chagePassword" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/changepassword.jsp" />
+	</definition>
+
+
+	<definition name="success" extends="login-error">
+		<put-attribute name="title" value="success" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/success.jsp" />
+	</definition>
+
+	<!-- Chanage Admin Password (Narendra) -->
+
+	<definition name="changeadminPassword" extends="AdminHomepage">
+		<put-attribute name="title" value="admin password change" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/adminpasswordchange.jsp" />
+	</definition>
+	<definition name="adminpasswordchangesuccess" extends="login-error">
+		<put-attribute name="title" value="success" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/password/adminpasswordchangesuccess.jsp" />
+	</definition>
+
+
+	<!-- ************* Change password Completed ******** -->
+
+
+	<!-- ############################### Admin Login Page Layout ######################################## -->
+	<definition name="AdminLoginPage"
+		template="/WEB-INF/views/tiles/layouts/admin/adminLoginPageLayout.jsp">
+		<put-attribute name="title" value="AdminLoginPage" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/admin/adminHeader.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/admin/adminMenu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/admin/adminFooter.jsp" />
+	</definition>
+	<!--########## listOfComments (Radha rukmini)########### -->
+
+	<!-- List Of Comments -->
+	<definition name="comments" extends="AdminHomepage">
+		<put-attribute name="title" value="comments" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/comments.jsp" />
+	</definition>
+
+	<!--########## listOfUsers (Rakesh)########### -->
+
+	<definition name="listof-users" extends="AdminHomepage">
+		<put-attribute name="title" value="listof-users" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/ListOfUsers.jsp" />
+	</definition>
+
+
+	<definition name="view" extends="AdminHomepage">
+		<put-attribute name="title" value="viewProfile" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/view.jsp" />
+	</definition>
+
+	<definition name="Vendorview" extends="AdminHomepage">
+		<put-attribute name="title" value="viewProfile" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/Vendorview.jsp" />
+	</definition>
+
+	<definition name="listof-Vendors" extends="AdminHomepage">
+		<put-attribute name="title" value="listof-users" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/ListOfVendors.jsp" />
+	</definition>
+
+
+	<definition name="listof-Ambulances" extends="AdminHomepage">
+		<put-attribute name="title" value="listof-Ambulances" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/ListOfAmbulances.jsp" />
+	</definition>
+
+	<definition name="listof-Doctors" extends="AdminHomepage">
+		<put-attribute name="title" value="listof-Doctors" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/ListOfDoctors.jsp" />
+	</definition>
+
+
+	<definition name="listof-Hospitals" extends="AdminHomepage">
+		<put-attribute name="title" value="listof-Hospitals" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/ListOfHospitals.jsp" />
+	</definition>
+
+
+
+	<definition name="Equipments" extends="AdminHomepage">
+		<put-attribute name="title" value="Equipments" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/Equipments.jsp" />
+	</definition>
+
+	<definition name="RegistorType" extends="AdminHomepage">
+		<put-attribute name="title" value="RegistorType" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/Registor.jsp" />
+	</definition>
+
+	<definition name="Doctor" extends="AdminHomepage">
+		<put-attribute name="title" value="Doctor" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/Doctor.jsp" />
+	</definition>
+
+	<definition name="DoctorSpecializations" extends="AdminHomepage">
+		<put-attribute name="title" value="DoctorSpecializations" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/DoctorSpecalization.jsp" />
+	</definition>
+
+
+	<definition name="AddMember" extends="AdminHomepage">
+		<put-attribute name="title" value="AddMember" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/AddMember.jsp" />
+	</definition>
+	<!--############################## slides ###################### -->
+	<definition name="upload_slides" extends="AdminHomepage">
+		<put-attribute name="title" value="AdminHomepage" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/mainslides.jsp" />
+	</definition>
+	<definition name="upload_slides2" extends="AdminHomepage">
+		<put-attribute name="title" value="AdminHomepage" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/mainslides.jsp" />
+	</definition>
+	<definition name="upload_slides3" extends="AdminHomepage">
+		<put-attribute name="title" value="AdminHomepage" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/mainslides.jsp" />
+	</definition>
+	<definition name="upload_slides4" extends="AdminHomepage">
+		<put-attribute name="title" value="AdminHomepage" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/mainslides.jsp" />
+	</definition>
+	<definition name="listcomments" extends="AdminHomepage">
+		<put-attribute name="title" value="comments" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/Contactpopup.jsp" />
+	</definition>
+	<!-- <definition name="listofequipment" extends="AdminLoginPage"> <put-attribute 
+		name="title" value="listofequipment" /> <put-attribute name="body" value="/WEB-INF/views/pages/admin/ListOfEquipments.jsp" 
+		/> </definition> -->
+	<!-- <definition name="ListOfUsers" extends="AdminLoginPage"> <put-attribute 
+		name="title" value="ListOfUsers" /> <put-attribute name="body" value="/WEB-INF/views/pages/admin/ListOfUsers.jsp"/> 
+		</definition> -->
+	<!--##########End listOfUsers (Rakesh)########### -->
+
+
+	<!-- ############################### Admin Home Layout ######################################## -->
+	<definition name="AdminHomepage"
+		template="/WEB-INF/views/tiles/layouts/admin/adminHomePageLayout.jsp">
+		<put-attribute name="title" value="Adminpage" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/admin/adminHeader.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/admin/adminMenu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/admin/adminFooter.jsp" />
+	</definition>
+
+
+
+
+
+
+	<!-- main page -->
+	<definition name="adminhomepage" extends="AdminHomepage">
+		<put-attribute name="title" value="adminhome" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/admin/adminpage.jsp" />
+	</definition>
+
+	<!--########################### error_page ##########varma########################## -->
+
+	<definition name="login-error"
+		template="/WEB-INF/views/tiles/layouts/error/userLoginErrorPageLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="" />
+	</definition>
+
+
+
+	<!-- user_error_page ###varma -->
+
+	<definition name="user-error" extends="login-error">
+		<put-attribute name="title" value="login_error" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/errorpage/error.jsp" />
+	</definition>
+
+
+	<!-- vendor_error_page #####varma -->
+
+	<definition name="vendor-error" extends="login-error">
+		<put-attribute name="title" value="login_error" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/errorpage/vendorError.jsp" />
+	</definition>
+	<!-- admin_error_page ####varma -->
+
+	<definition name="admin-error" extends="login-error">
+		<put-attribute name="title" value="login_error" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/errorpage/adminError.jsp" />
+	</definition>
+
+	<!-- 404 error_page #####varma -->
+	<definition name="404" extends="login-error">
+		<put-attribute name="title" value="404_error" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/errorpage/404errorpage.jsp" />
+	</definition>
+
+	<!-- 500 error_page #####varma -->
+
+	<definition name="500" extends="login-error">
+		<put-attribute name="title" value="500_error" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/errorpage/500errorpage.jsp" />
+	</definition>
+
+	<!--########################### UserAddMembers ##########varma########################## -->
+
+	<definition name="userAddmembers"
+		template="/WEB-INF/views/tiles/layouts/UserAddMembersLayOut/UserAddMembersLayOut.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/user/userHeader.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/user/userMenu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/user/userFooter.jsp" />
+	</definition>
+
+	<!-- add family user ###varma -->
+	<definition name="AddfamilyMembers" extends="userHomePage">
+		<put-attribute name="title" value="AddMembers" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/UserAddMembers/AddMembers.jsp" />
+	</definition>
+
+
+
+	<!-- add member success ###varma -->
+	<definition name="AddedAsmember" extends="userHomePage">
+		<put-attribute name="title" value="AddMembers" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/UserAddMembers/AddedAsmember.jsp" />
+	</definition>
+
+	<!-- user friends list ###varma -->
+	<definition name="friendlist" extends="userHomePage">
+		<put-attribute name="title" value="AddMembersfriends" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/UserAddMembers/friendslist.jsp" />
+	</definition>
+
+	<!-- user friends profile details ###varma -->
+	<definition name="friendDetails" extends="userHomePage">
+		<put-attribute name="title" value="AddMembersDetails" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/AddMemberprofileDetails/profiledetails.jsp" />
+	</definition>
+
+	<!-- user friends deleted success ###varma -->
+	<definition name="memberdeleted" extends="userHomePage">
+		<put-attribute name="title" value="deletedsuccess" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/UserAddMembers/memberDeletedsuccess.jsp" />
+	</definition>
+
+
+	<!-- add member update here page ###varma -->
+	<definition name="EditmemberPage" extends="userHomePage">
+		<put-attribute name="title" value="edithere" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/AddMemberprofileDetails/editPage.jsp" />
+	</definition>
+	<!-- add member update success ###varma -->
+	<definition name="updatesuccess" extends="userHomePage">
+		<put-attribute name="title" value="edithere" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/AddMemberprofileDetails/updatedsuccess.jsp" />
+	</definition>
+
+
+	<!-- image(profile picture -->
+	<definition name="upload-image" extends="userHomePage">
+		<put-attribute name="title" value="upload images" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/user/imageupload.jsp" />
+	</definition>
+
+	<definition name="userProfilesuccess" extends="userHomePage">
+		<put-attribute name="title" value="upload success" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/user/updateusersuccess.jsp" />
+	</definition>
+
+	<!-- image vendor(profile picture -->
+	<definition name="upload-profile-pic" extends="vendorhome">
+		<put-attribute name="title" value="upload images" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/uploadProfilePicVendor.jsp" />
+	</definition>
+
+	<!-- image vendor(profile picture -->
+	<definition name="uploadsuccess" extends="vendorhome">
+		<put-attribute name="title" value="uploadimages" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/uploadedsuccess.jsp" />
+	</definition>
+	<!-- googlemap in main page -->
+	<definition name="googlemap" extends="main-page-layout">
+		<put-attribute name="title" value="googlemap" />
+		<put-attribute name="body" value="/WEB-INF/views/pages/map/map2.jsp" />
+	</definition>
+
+	
+	<!-- 	googlemap for current location in main page -->
+		<definition name="currentlocation" extends="userHomePage">
+		<put-attribute name="title" value="map" />
+		<put-attribute name="body" value="/WEB-INF/views/pages/map/currentlocation.jsp" />
+	</definition>
+
+	
+	<!-- using	googlemapapi Auto_Copmlete_Address in main page -->
+		<definition name="emergency_book_view" extends="userHomePage">
+		<put-attribute name="title" value="map" />
+		<put-attribute name="body" value="/WEB-INF/views/pages/map/emergency_book_view.jsp" />
+	</definition>
+	
+		<!-- EmergencyBooksuccess using	googlemapapi Auto_Copmlete_Address in main page -->
+		<definition name="EmergencyBooksuccess" extends="userHomePage">
+		<put-attribute name="title" value="map" />
+		<put-attribute name="body" value="/WEB-INF/views/pages/SuccessMessages/EmergencyBooksuccess.jsp" />
+	</definition>
+	<!-- Emergence_book_success without location map using	googlemapapi Auto_Copmlete_Address in main page -->
+		<definition name="Emergence_book_success" extends="userHomePage">
+		<put-attribute name="title" value="map" />
+		<put-attribute name="body" value="/WEB-INF/views/pages/SuccessMessages/Emergence_book_success.jsp" />
+	</definition>
+	
+
+	<!--######################################## Hospital Doctor page ############################################ -->
+
+	<definition name="ourDoctorsforHospital" extends="vendorhome">
+		<put-attribute name="title" value="update Details" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospital/ourDoctors.jsp" />
+	</definition>
+
+	<definition name="docreg" extends="vendorhome">
+		<put-attribute name="title" value="doc_reg" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospital/doctorforHospitalRegistration.jsp" />
+	</definition>
+
+	<definition name="doctorviewprofileinhospital" extends="vendorhome">
+		<put-attribute name="title" value="view profile" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospital/doctorviewprofileinhospital.jsp" />
+	</definition>
+
+	<definition name="docregsuccessforhospital" extends="vendorhome">
+		<put-attribute name="title" value="registration sucess" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospital/DoctorSuccessInHospital.jsp" />
+	</definition>
+
+
+	<definition name="setPasswordforDoctor" extends="password-layout">
+		<put-attribute name="title" value="set password" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospital/setPasswordForDoctor.jsp" />
+	</definition>
+	<definition name="setpasswordforDoctorSuccess" extends="vendorhome">
+		<put-attribute name="title" value="set password sucess" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospital/setpasswordfordoctorsuccess.jsp" />
+	</definition>
+
+	<definition name="ambulanceprofiledetails" extends="vendorhome">
+		<put-attribute name="title" value="ambulance Details" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/ambulanceMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/ambulanceprofile.jsp" />
+	</definition>
+	<!--######################################## Hospital Ambulance page ############################################ -->
+	<definition name="ambregforhospital" extends="vendorhome">
+		<put-attribute name="title" value="HelloAmbulance" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospital/ambulanceforHospitalRegistration.jsp" />
+	</definition>
+	<definition name="ourAmbulancesforHospital" extends="vendorhome">
+		<put-attribute name="title" value="update Details" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospital/ourAmbulances.jsp" />
+	</definition>
+
+	<definition name="ambregsuccessforhospital" extends="vendorhome">
+		<put-attribute name="title" value="registration sucess" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospital/AmbulanceSuccessInHospital.jsp" />
+	</definition>
+	<definition name="ambulancesviewprofileinhospital" extends="vendorhome">
+		<put-attribute name="title" value="view profile" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospital/ambulanceviewprofileinhospital.jsp" />
+	</definition>
+
+
+	<definition name="setPasswordforAmbulance" extends="password-layout">
+		<put-attribute name="title" value="set password" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospital/setPasswordForAmbulance.jsp" />
+	</definition>
+
+
+
+	<definition name="setpasswordforAmbulanceSuccess" extends="vendorhome">
+		<put-attribute name="title" value="set password sucess" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/vendor/hospitalMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/hospital/setpasswordforambulancesuccess.jsp" />
+	</definition>
+
+
+
+
+	<definition name="setPasswordforAmbulanceInAmbulance"
+		extends="password-layout">
+		<put-attribute name="title" value="set password" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/vendor/ambulance/setPasswordForAmbulanceInAmbulance.jsp" />
+	</definition>
+	
+	
+	
+	<!-- #############################Add Ambulance page#################### -->
+	
+	<definition name="AmbulanceHomepage"
+		template="/WEB-INF/views/tiles/layouts/Ambulance/AmbulanceHmoePageLayout.jsp">
+		<put-attribute name="title" value="AmbulanceHomepage" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/Ambulance/addAmbulanceHeader.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/Ambulance/addAmbulanceMenu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/Ambulance/addAmbulanceFooter.jsp" />
+	</definition>
+	
+		<!-- ambulance  page -->
+	<definition name="ambulancepage" extends="AmbulanceHomepage">
+		<put-attribute name="title" value="Ambulance"/>
+		 <put-attribute name="body" value="/WEB-INF/views/pages/vendor/welcomeAmbulance.jsp"/>
+	</definition>
+	
+	<!-- #############################Add Doctor page#################### -->
+	
+	<definition name="DoctorHomepage"
+		template="/WEB-INF/views/tiles/layouts/Doctor/DoctorHomePageLayout.jsp">
+		<put-attribute name="title" value="AmbulanceHomepage" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/Doctor/addDoctorHeader.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/Doctor/addDoctorMenu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/Doctor/addDoctorFooter.jsp" />
+	</definition>
+	
+		<!-- Doctor page -->
+	<definition name="doctorpage" extends="DoctorHomepage">
+		<put-attribute name="title" value="Doctor"/>
+		 <put-attribute name="body" value="/WEB-INF/views/pages/vendor/welcomeDoctor.jsp"/>
+	</definition>
+	
+	<definition name="welcome-page" extends="userHomePage">
+		 <put-attribute name="title" value="userHomePage" />
+					<put-attribute name="menu" value=""/>
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/user/userafterloginpage.jsp" />
+	</definition>
+</tiles-definitions>
